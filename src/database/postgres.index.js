@@ -5,7 +5,7 @@ const sequelize = new Sequelize(
     "postgres", //user
     "test123", //password
     {
-        host: "db",
+        host: "localhost",
         dialect: "postgres"
     }
 );

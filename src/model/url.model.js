@@ -15,7 +15,8 @@ const Url = sequelize.define("url", {
     },
     shortUrl: {
         type: DataTypes.STRING,
-        allowNull: false
+        allowNull: false,
+        unique:true
     }
 });
 

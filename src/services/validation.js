@@ -16,7 +16,15 @@ const registerValidation = (data) => {
 
 const urlValidation = (data) => {
     const schema = joi.object({
-        longUrl:joi.string().required().pattern(new RegExp(validationRegex.regexForUrl))
+        longUrl: joi.string().required().pattern(new RegExp(validationRegex.regexForUrl))
+    });
+    return schema.validate(data);
+}
+
+const loginValidation = (data) => {
+    const schema = joi.object({
+        email: joi.string().email().required(),
+        password: joi.string().required().trim()
     });
     return schema.validate(data);
 }
@@ -25,5 +33,6 @@ const urlValidation = (data) => {
 
 module.exports = {
     registerValidation,
-    urlValidation
+    urlValidation,
+    loginValidation
 }

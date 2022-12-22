@@ -71,12 +71,15 @@ const jwtUtils = {
 
 const errMessages = {
     unique: "user with phone/email already registered!",
-    userNotFound: "user Not Found"
+    userNotFound: "user Not Found",
+    incorrectPassword: "Entered Incorrect password/email",
+    wentWrong: "Something Went wrong , please refresh page!"
 }
 
 const successMessages = {
     registered: "successfully registered.",
     update: "Successfully updated",
+    login: "Successfully logged in"
 
 }
 
@@ -96,12 +99,12 @@ const validationRegex = {
 }
 
 const shortIdUtils = {
-    shortIdLength:7,
-    baseUrl:"http://localhost:3000"
+    shortIdLength: 7,
+    baseUrl: "http://localhost:3000"
 }
 
 const redisUtils = {
-    expirationTime:30   // In days;
+    expirationTime: 30   // In days;
 }
 
 module.exports = {
