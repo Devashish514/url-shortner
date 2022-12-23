@@ -104,7 +104,8 @@ const shortIdUtils = {
 }
 
 const redisUtils = {
-    expirationTime: 30   // In days;
+    expirationTime: 30,   // In days;
+    incrementTime : 1     //in days
 }
 
 module.exports = {

@@ -4,6 +4,7 @@ const route = require('./routes/user.routes');
 const passport = require("passport");
 const session = require('express-session')
 require("./services/googleSSO");
+const docsRoute = require('./routes/docs.routes');
 require('dotenv').config();
 
 app.use(session({
@@ -39,3 +40,5 @@ const port = process.env.PORT || 3000;
 app.listen(port, () => {
     console.log(`Express App running on port ${port}`);
 });
+
+app.use('/api-docs', docsRoute);

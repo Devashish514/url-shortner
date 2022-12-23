@@ -15,9 +15,10 @@ module.exports = router;
 
 
 
+
 /**
  * @swagger
- * /createUser?key=email:
+ * /api/v1/createUser?key=email:
  *   post:
  *     summary: Register as user
  *     tags: [Auth]
@@ -28,13 +29,118 @@ module.exports = router;
  *           schema:
  *             type: object
  *             required:
- *               - firstName,
- *               - lastName,
+ *               - firstName
+ *               - lastName
  *               - email
  *               - password
  *               - phone
+ *             properties:    
+ *               firstName:
+ *                 type: string
+ *               lastName:
+ *                 type: string
+ *               email:
+ *                 type:string
+ *               password:
+ *                 type:string
+ *               phone:
+ *                 type:string
  *     responses:
  *       "201":
+ *         description: Created
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *              
+ *       
+ */
+
+
+/**
+ * @swagger
+ * /api/v1/login:
+ *   post:
+ *     summary: login API
+ *     tags: [Auth]
+ *     requestBody:
+ *       required: true
+ *       content:
+ *         application/json:
+ *           schema:
+ *             type: object
+ *             required:
+ *               - email
+ *               - password
+ *             properties:
+ *               email:
+ *                 type: string
+ *               password:
+ *                 type: string
+ *             example:
+ *               email: "deva@gmail.com"
+ *               password: "Password@123"
+ 
+ *     responses:
+ *       "200":
+ *         description: Verified
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *              
+ *       
+ */
+
+
+/**
+ * @swagger
+ * /api/v1//setUrl/:id:
+ *   post:
+ *     summary: upload longurl
+ *     tags: [Auth]
+ *     requestBody:
+ *       required: true
+ *       content:
+ *         application/json:
+ *           schema:
+ *             type: object
+ *             required:
+ *               - longUrl
+ *             properties:
+ *               longUrl:
+ *                 type: string
+ *             example:
+ *               longUrl: "https://amazonprimevideos/movies=jack/uuid=lkjh-ijsnss"
+ *     responses:
+ *       "201":
+ *         description: Created
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *              
+ *       
+ */
+
+/**
+ * @swagger
+ * /api/v1//getUrl/:id/:urlCode:
+ *   get:
+ *     summary: get Short Url
+ *     tags: [Auth]
+ *     requestBody:
+ *       required: false
+ *       content:
+ *         application/json:
+ *           schema:
+ *             type: object
+ *             required:
+ *               - id
+ *               - urlCode
+ 
+ *     responses:
+ *       "200":
  *         description: Created
  *         content:
  *           application/json:

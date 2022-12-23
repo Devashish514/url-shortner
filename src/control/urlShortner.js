@@ -19,7 +19,7 @@ const setUrl = async function (req, res) {
         data.urlCode = shortId(shortIdUtils.shortIdLength);
         data.shortUrl = shortIdUtils.baseUrl + "/" + data.urlCode;
         data.uuid = uuidv4();
-        const checkUnique = await Url.findAll({ where: Sequelize.and({ longUrl }, { shortUrl }) });
+        const checkUnique = await Url.findAll({ where: Sequelize.and({ longUrl: data.longUrl }, { shortUrl: data.shortUrl }) });
         if (checkUnique.length !== 0) {
             return res.status(statusCodes[403].value).send({ status: statusCodes[403].message, msg: errMessages.wentWrong });
         }
@@ -35,6 +35,7 @@ const setUrl = async function (req, res) {
 const getUrl = async (req, res) => {
     try {
         const { id, urlCode } = req.params;
+        console.log(req.validateUser)
         if (req.validateUser !== id) {
             return res.status(statusCodes[401].value).send({ msg: statusCodes[401].message });
         }

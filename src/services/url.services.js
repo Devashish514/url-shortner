@@ -10,14 +10,12 @@ function shortId(length) {
 }
 
 function cacheExpTime(days) {
-    return Date.now() + days * 24 * 60 * 60 * 1000;
+    return days * 24 * 60 * 60;
 }
 
 
-function incrementCachedTime(date, days) {
-    var result = new Date(date);
-    result.setDate(result.getDate() + days);
-    return result.getTime();
-  }
+function incrementCachedTime(days) {
+    return days * 24 * 60 * 60;
+}
 
-module.exports = { shortId, cacheExpTime , incrementCachedTime }
+module.exports = { shortId, cacheExpTime, incrementCachedTime }
