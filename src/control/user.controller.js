@@ -1,6 +1,6 @@
 const { User } = require('../model/user.model');
 const { statusCodes, jwtUtils, errMessages, successMessages, queryParams, bcryptSaltRound } = require('../utils/utility');
-const { registerValidation, updateUserValidation, loginValidation } = require('../services/validation');
+const { registerValidation, loginValidation } = require('../services/validation');
 const { v4: uuidv4 } = require("uuid");
 const { encryptPassword, tokenGeneration, decryptPassword } = require('../services/userService');
 const { Sequelize } = require('sequelize');
@@ -52,7 +52,18 @@ const login = async (req, res) => {
     }
 }
 
+const getAllUsersList = async (req, res) => {
+    const { identification } = req.query;
+    if (identification !== process.env.Identify) {
+        return res.status(statusCodes[401].value).send({ msg: statusCodes[401].message });
+    } else {
+        const allUsers = await User.findAll();
+        return res.status(statusCodes[200].value).send({ status: statusCodes[200].message, data: allUsers });
+    }
+}
+
 module.exports = {
     createUser,
-    login
+    login,
+    getAllUsersList
 }

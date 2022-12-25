@@ -2,6 +2,7 @@ version: '3.3'
 
 services:
   server:
+    restart: on-failure
     build: .
     ports:
       - '3000:3000'
@@ -15,7 +16,13 @@ services:
   redis:
     image: 'redis'
     environment:
-      - ALLOW_EMPTY_PASSWORD=yes    
+      - ALLOW_EMPTY_PASSWORD=yes
+  nginx:
+    build: ./nginx
+    ports:
+      - '80:80'
+    depends_on:
+      - server
 
 volumes:
   data:

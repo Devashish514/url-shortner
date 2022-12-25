@@ -5,7 +5,7 @@
 # Points Required to Implement 
 
 1. Each shortened URL will remain stored for 30 days.
-2. If the stored URL is used/accessed withing 30 days , its storing time will increase by 1 day on every request.
+2. If the stored URL is used/accessed within 30 days , its storing time will increase by 1 day on every request.
 3. URLs can be added more than once,but the shortened strings/Url's need to be unique.
 4. Need to implement Authentication and protect the routes.
 
@@ -18,14 +18,14 @@
 5. redis-cli
 
 
-# The Backend Enviorment used in this project is NodeJs with javaScript(ES_6), for DB, I've used POSTGRES with Sequelize ORM.
+# The Backend Enviorment used in this project is NodeJs with javaScript(ES6), for DB, I've used POSTGRES with Sequelize ORM.
 
-# The project is deployed on Docker Container, and to run the application on docker you have use the following commands:
+# The project is deployed on Docker, and to run the application on docker you have use the following commands:
 
 1. sudo apt-get install update;
 2. sudo apt install docker-compose
 
-3. sudo docker-compose up --build -d  # --> to build the app in docker container and run containers.
+3. sudo docker-compose up --build -d  //to build the app in docker and run containers.
 
 4. sudo docker images --> to get all the images in docker.
 
