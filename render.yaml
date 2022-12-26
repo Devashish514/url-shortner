@@ -1,0 +1,20 @@
+services:
+  - type: web
+    env: docker
+    name: fun-size-url-backend
+    repo: https://github.com/Devashish514/url-shortner
+
+  -type: redis
+  name: lightning
+    ipAllowList: # required
+      - source: 0.0.0.0/0
+        description: everywhere
+    plan: free # optional (defaults to starter)
+    maxmemoryPolicy: noeviction # optional (defaults to allkeys-lru)
+
+
+
+  databases:
+  - name: postgres
+    databaseName: postgres # optional (Render may add a suffix)
+    user: postgres # optional
