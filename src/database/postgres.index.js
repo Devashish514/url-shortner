@@ -24,7 +24,9 @@ const { Sequelize } = require('sequelize');
 
 const sequelize = new Sequelize({
     url: "postgres://dg:EqFOqduopSEhDPqaoPbmk5MVQynqW0dm@dpg-ceklefcgqg4ekmfhruj0-a/mydb_d55k",
-    dialect: "postgres"
+    dialect: "postgres",
+    ssl:false,
+    authenticate:false
 });
 
 // sequelize.sync();
