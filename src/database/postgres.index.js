@@ -1,10 +1,6 @@
 const { Sequelize } = require('sequelize');
 
-const sequelize = new Sequelize({
-    url: process.env.DATABASE_URL,
-    dialect: "postgres",
-    ssl:false
-});
+const sequelize = new Sequelize(process.env.DATABASE_URL);
 
 sequelize.sync();
 
