@@ -6,7 +6,7 @@ const sequelize = new Sequelize({
     ssl:false
 });
 
-// sequelize.sync();
+sequelize.sync();
 
 (async () => {
     try {
