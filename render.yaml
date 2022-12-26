@@ -1,20 +1,25 @@
 services:
+  # A Docker web service
   - type: web
+    name: webdis
     env: docker
-    name: fun-size-url-backend
     repo: https://github.com/Devashish514/url-shortner
-
-  -type: redis
-  name: lightning
+    
+  # A Redis instance
+  - type: redis
+    name: lightning
     ipAllowList: # required
       - source: 0.0.0.0/0
         description: everywhere
     plan: free # optional (defaults to starter)
     maxmemoryPolicy: noeviction # optional (defaults to allkeys-lru)
 
-
-
-  databases:
-  - name: postgres
-    databaseName: postgres # optional (Render may add a suffix)
+databases:
+  - name: elephant
+    databaseName: mydb # optional (Render may add a suffix)
     user: postgres # optional
+    ipAllowList: # optional (defaults to allow all)
+      - source: 203.0.113.4/30
+        description: office
+      - source: 198.51.100.1
+        description: home
