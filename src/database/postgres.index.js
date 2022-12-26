@@ -1,32 +1,9 @@
-const { Client } = require('pg')
-
-
-// const client = new Client({
-//     user: 'dg',
-//     host: 'dpg-ceklefcgqg4ekmfhruj0-a',
-//     database: 'mydb_d55k',
-//     password: 'EqFOqduopSEhDPqaoPbmk5MVQynqW0dm',
-//     port: 5432,
-// })
-// client.connect(function (err) {
-//     if (err) throw err;
-//     console.log("Connected!");
-// });
-
-
-
-
-
-
-
-
 const { Sequelize } = require('sequelize');
 
 const sequelize = new Sequelize({
-    url: "postgres://dg:EqFOqduopSEhDPqaoPbmk5MVQynqW0dm@dpg-ceklefcgqg4ekmfhruj0-a/mydb_d55k",
+    url: process.env.DATABASE_URL,
     dialect: "postgres",
-    ssl:false,
-    authenticate:false
+    ssl:false
 });
 
 // sequelize.sync();
