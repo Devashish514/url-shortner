@@ -80,7 +80,7 @@ module.exports = router;
  *               password:
  *                 type: string
  *             example:
- *               email: "deva@gmail.com"
+ *               email: "abc@xyz.com"
  *               password: "Password@123"
  
  *     responses:

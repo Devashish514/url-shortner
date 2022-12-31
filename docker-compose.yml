@@ -1,11 +1,30 @@
 version: '3.3'
 
 services:
-  server:
+  server_one:
+    container_name: server_one
     restart: on-failure
     build: .
     ports:
-      - '3000:3000'
+      - '8001:3000'
+  server_two:
+    container_name: server_two
+    restart: on-failure
+    build: .
+    ports:
+      - '8002:3000'
+  server_three:
+    container_name: server_three
+    restart: on-failure
+    build: .
+    ports:
+      - '8003:3000'
+  server_four:
+    container_name: server_four
+    restart: on-failure
+    build: .
+    ports:
+      - '8004:3000'
   db:
     image: 'postgres'
     environment:
@@ -21,8 +40,8 @@ services:
     build: ./nginx
     ports:
       - '80:80'
-    depends_on:
-      - server
+    # depends_on:
+    #   - server
 
 volumes:
   data:

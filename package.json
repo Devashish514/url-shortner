@@ -24,6 +24,7 @@
   },
   "devDependencies": {
     "dotenv": "^16.0.3",
+    "loadtest": "^5.2.0",
     "nodemon": "^2.0.20",
     "swagger-jsdoc": "^6.2.7",
     "swagger-ui-express": "^4.6.0"

@@ -18,6 +18,7 @@ The main function of the project is to provide the functionality to user to shor
 
 ## The Backend Enviorment used in this project is NodeJs with javaScript(ES6), for DB, I've used POSTGRES with Sequelize ORM.
 
+
 ## Authors
 
 - [@Devashish514](https://github.com/Devashish514)
@@ -45,7 +46,6 @@ To run this project, you will need to add the following environment variables to
 `DATABASE_URL`
 
 `DATABASE_HOST`
-
 
 
 ## Installation and Commands
@@ -76,6 +76,22 @@ Docker commands:
 
 # To remove all containers :
 8. sudo docker-compose down 
+
+# To use container's bash terminal :
+sudo docker exec -it "containerId" "bash/psql/etc...."
+
+```
+## refer "nginx.conf" file for load balancing and cluster modifications..
+
+```bash
+pm2 monit  # To monitor the load and cpu performance of clusters.
+
+# For  Loadtesting..
+npm install loadtest -g --save;
+
+loadtest "server link/URL" -t 20 -c 10 -rps 100;
+# loadtest for 20 sec with concurrency of 10 request @ 100 request per second.
+
 
 ```
     

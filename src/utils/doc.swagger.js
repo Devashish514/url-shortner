@@ -9,7 +9,7 @@ const swaggerDef = {
     },
     servers: [
         {
-            url: `http://localhost:3000`,
+            url: `https://fun-size-url.onrender.com`,
         }
     ],
 };
